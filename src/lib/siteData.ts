@@ -49,8 +49,8 @@ export const siteData = {
   heroImages: [
     "/hero1.webp",
     "/hero2.webp",
-    "/hero3.webp",
-    "/hero4.webp"
+    "/hero3.webp"
+    
   ],
 
   /*
