@@ -37,6 +37,7 @@ export const siteData = {
     ],
     ogImage: "/hero3.png",
   },
+
   /*
   ===============================
   HERO
@@ -44,17 +45,13 @@ export const siteData = {
   */
   heroTitle: "Vive la naturaleza en Caviahue",
   heroSubtitle: "Cabañas, Tinyhouse, Glamping y Camping",
-  /*
-  ===============================
-  HERO IMAGES
-  ===============================
-  */
- heroImages: [
-  "/hero1.webp",
-  "/hero2.webp",
-  "/hero3.webp",
-  "/hero4.webp"
-],
+
+  heroImages: [
+    "/hero1.webp",
+    "/hero2.webp",
+    "/hero3.webp",
+    "/hero4.webp"
+  ],
 
   /*
   ===============================
@@ -62,11 +59,17 @@ export const siteData = {
   ===============================
   */
   location: {
-  address: "Centro Turístico Caviahue, Santa Bárbara, Región del Biobío, Chile",
-  embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.422819031621!2d-72.03219318503698!3d-37.53016617981319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966f416e2f9f0e81%3A0x0!2zMzbCsDMxJzQ2LjAiUyA3MsKwMDInMzYuNSJX!5e0!3m2!1ses!2scl!4v1708416123456",
-  mapsLink: "https://maps.app.goo.gl/pxuzs1PYsXyNoYew8",
-}
-,
+    address: "Centro Turístico Caviahue, Santa Bárbara, Región del Biobío, Chile",
+
+    // 🔥 AGREGADO PARA QUE NO FALLE VERCEL
+    city: "Santa Bárbara",
+    region: "Región del Biobío",
+    country: "Chile",
+
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.422819031621!2d-72.03219318503698!3d-37.53016617981319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966f416e2f9f0e81%3A0x0!2zMzbCsDMxJzQ2LjAiUyA3MsKwMDInMzYuNSJX!5e0!3m2!1ses!2scl!4v1708416123456",
+    mapsLink: "https://maps.app.goo.gl/pxuzs1PYsXyNoYew8",
+  },
+
   /*
   ===============================
   ALOJAMIENTOS
@@ -126,25 +129,23 @@ export const siteData = {
   ===============================
   */
   extras: [
-  {
-    id: "camping",
-    title: "Camping",
-    description:
-      "Espacios habilitados para carpas con acceso a servicios básicos.",
-    price: "Desde $7.000",
-    image: "/camping.png",
-  },
-  {
-    id: "tinaja",
-    title: "Tinaja",
-    description:
-      "Relájate en nuestra tinaja de agua caliente rodeado de naturaleza.",
-    price: "Desde $20.000",
-    image: "/tinaja.png",
-  },
-],
-
-
+    {
+      id: "camping",
+      title: "Camping",
+      description:
+        "Espacios habilitados para carpas con acceso a servicios básicos.",
+      price: "Desde $7.000",
+      image: "/camping.png",
+    },
+    {
+      id: "tinaja",
+      title: "Tinaja",
+      description:
+        "Relájate en nuestra tinaja de agua caliente rodeado de naturaleza.",
+      price: "Desde $20.000",
+      image: "/tinaja.png",
+    },
+  ],
 
   /*
   ===============================
@@ -178,16 +179,16 @@ export const siteData = {
     },
   ],
 
-/*
+  /*
   ===============================
-  Contador de disponibilidad (para generar urgencia sutil)
+  DISPONIBILIDAD
   ===============================
   */
   availability: {
-  cabana: 2,
-  tinyhouse: 1,
-  glamping: 3
-},
+    cabana: 2,
+    tinyhouse: 1,
+    glamping: 3,
+  },
 
   /*
   ===============================
@@ -195,77 +196,79 @@ export const siteData = {
   ===============================
   */
   policies: {
-  payment: [
-    "Se solicita abono previo mediante transferencia bancaria.",
-    "El saldo restante se paga al momento del check-in."
-  ],
-  cancellation: [
-    "Las reservas pueden reprogramarse con 72 horas de anticipación.",
-    "En caso contrario, el abono no es reembolsable."
-  ]
-}
-,
+    payment: [
+      "Se solicita abono previo mediante transferencia bancaria.",
+      "El saldo restante se paga al momento del check-in.",
+    ],
+    cancellation: [
+      "Las reservas pueden reprogramarse con 72 horas de anticipación.",
+      "En caso contrario, el abono no es reembolsable.",
+    ],
+  },
 
   /*
   ===============================
   GALERÍA
   ===============================
   */
-gallery: [
-  {
-    src: "/gallery01.png",
-    alt: "Cabaña exterior rodeada de naturaleza",
-    description: "Vista exterior de nuestra cabaña completamente equipada en un entorno natural y tranquilo.",
-  },
-  {
-    src: "/gallery02.png",
-    alt: "Interior acogedor Tinyhouse",
-    description: "Espacio moderno y cálido ideal para parejas que buscan desconexión.",
-  },
-  {
-    src: "/gallery03.png",
-    alt: "Zona de tinaja al atardecer",
-    description: "Relájate en nuestra tinaja privada rodeada de bosque y naturaleza.",
-  },
-  {
-    src: "/hero4.webp",
-    alt: "Vista nocturna del complejo",
-    description: "Ambiente nocturno iluminado que invita al descanso y la desconexión.",
-  },
-],
+  gallery: [
+    {
+      src: "/gallery01.png",
+      alt: "Cabaña exterior rodeada de naturaleza",
+      description:
+        "Vista exterior de nuestra cabaña completamente equipada en un entorno natural y tranquilo.",
+    },
+    {
+      src: "/gallery02.png",
+      alt: "Interior acogedor Tinyhouse",
+      description:
+        "Espacio moderno y cálido ideal para parejas que buscan desconexión.",
+    },
+    {
+      src: "/gallery03.png",
+      alt: "Zona de tinaja al atardecer",
+      description:
+        "Relájate en nuestra tinaja privada rodeada de bosque y naturaleza.",
+    },
+    {
+      src: "/hero4.webp",
+      alt: "Vista nocturna del complejo",
+      description:
+        "Ambiente nocturno iluminado que invita al descanso y la desconexión.",
+    },
+  ],
 
   /*
   ===============================
   RESEÑAS
   ===============================
   */
- testimonials: [
-  {
-    name: "María González",
-    comment: "Un lugar maravilloso para desconectarse.",
-    rating: 5,
-    avatar: "/avatar1.jpg",
-    date: "Hace 2 meses",
-    stay: "Cabaña",
-  },
-  {
-    name: "Carlos Muñoz",
-    comment: "Excelente atención y entorno espectacular.",
-    rating: 5,
-    avatar: "/avatar2.jpg",
-    date: "Hace 1 mes",
-    stay: "Tinyhouse",
-  },
-  {
-    name: "Valentina Rojas",
-    comment: "La tinaja fue una experiencia increíble.",
-    rating: 5,
-    avatar: "/avatar3.jpg",
-    date: "Hace 3 semanas",
-    stay: "Glamping",
-  },
-]
-,
+  testimonials: [
+    {
+      name: "María González",
+      comment: "Un lugar maravilloso para desconectarse.",
+      rating: 5,
+      avatar: "/avatar1.jpg",
+      date: "Hace 2 meses",
+      stay: "Cabaña",
+    },
+    {
+      name: "Carlos Muñoz",
+      comment: "Excelente atención y entorno espectacular.",
+      rating: 5,
+      avatar: "/avatar2.jpg",
+      date: "Hace 1 mes",
+      stay: "Tinyhouse",
+    },
+    {
+      name: "Valentina Rojas",
+      comment: "La tinaja fue una experiencia increíble.",
+      rating: 5,
+      avatar: "/avatar3.jpg",
+      date: "Hace 3 semanas",
+      stay: "Glamping",
+    },
+  ],
 
   /*
   ===============================
