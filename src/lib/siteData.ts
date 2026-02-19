@@ -230,12 +230,7 @@ export const siteData = {
       description:
         "Relájate en nuestra tinaja privada rodeada de bosque y naturaleza.",
     },
-    {
-      src: "/hero4.webp",
-      alt: "Vista nocturna del complejo",
-      description:
-        "Ambiente nocturno iluminado que invita al descanso y la desconexión.",
-    },
+    
   ],
 
   /*
