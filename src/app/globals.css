@@ -24,3 +24,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/*
+======================================
+SCROLL SUAVE GLOBAL
+======================================
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+/*
+Compensa header fijo
+*/
+
+section {
+  scroll-margin-top: 100px;
+}

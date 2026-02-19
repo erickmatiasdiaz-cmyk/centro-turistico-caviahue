@@ -13,19 +13,30 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+
+    /*
+      baseUrl debe ser la raíz del proyecto
+    */
+    "baseUrl": ".",
+
+    /*
+      Alias apuntando a src
+    */
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    ]
   },
+
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
