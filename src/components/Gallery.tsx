@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 /*
 ================================================
@@ -37,10 +37,9 @@ export default function Gallery() {
   return (
     <section id="galeria" className="py-24 bg-white px-6">
       <div className="max-w-7xl mx-auto">
-
         {/* Título */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Galería</h2>
+          <h2 className="text-4xl font-bold mb-4 text-black">Galería</h2>
           <p className="text-gray-600 max-w-xl mx-auto">
             Descubre nuestros espacios y vive la experiencia.
           </p>
@@ -106,7 +105,7 @@ export default function Gallery() {
               onClick={closeModal}
               className="absolute top-6 right-6 bg-black/40 hover:bg-black/70 text-white px-4 py-2 rounded-full"
             >
-              ✕
+              X
             </button>
 
             {/* Anterior */}
@@ -114,7 +113,7 @@ export default function Gallery() {
               onClick={prevImage}
               className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white px-4 py-3 rounded-full"
             >
-              ‹
+              &lt;
             </button>
 
             {/* Siguiente */}
@@ -122,7 +121,7 @@ export default function Gallery() {
               onClick={nextImage}
               className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white px-4 py-3 rounded-full"
             >
-              ›
+              &gt;
             </button>
           </div>
         </div>

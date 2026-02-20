@@ -1,12 +1,9 @@
-"use client";
+﻿"use client";
 
 /*
 ================================================
-SECCIÓN ALOJAMIENTOS
+SECCION ALOJAMIENTOS
 ================================================
-
-- Solo renderiza tarjetas
-- Arquitectura limpia
 */
 
 import { siteData } from "@/lib/siteData";
@@ -14,11 +11,13 @@ import AccommodationCard from "./AccommodationCard";
 
 export default function Accommodations() {
   return (
-    <section id="alojamientos" className="py-24 bg-gray-50">
+    <section
+      id="alojamientos"
+      className="py-24 bg-gray-50 text-gray-900"
+    >
       <div className="max-w-7xl mx-auto px-6">
-
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">
             Nuestros Alojamientos
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -35,7 +34,6 @@ export default function Accommodations() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );

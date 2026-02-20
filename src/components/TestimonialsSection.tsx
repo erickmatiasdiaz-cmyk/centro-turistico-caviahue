@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { Star } from "lucide-react";
@@ -11,7 +11,7 @@ export default function TestimonialsSection() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 text-black">
             Lo que dicen nuestros visitantes
           </h2>
           <p className="text-gray-500">
@@ -73,3 +73,5 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+
+

@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 /*
 ================================================
-SECCIÓN POLÍTICAS & HORARIOS – VERSION PREMIUM
+SECCIÓN POLÍTICAS & HORARIOS - VERSIÓN PREMIUM
 ================================================
 
 Objetivo:
@@ -21,7 +21,7 @@ export default function Policies() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 text-black">
             Políticas y Horarios
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -38,7 +38,7 @@ export default function Policies() {
               <Clock size={32} />
             </div>
 
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">
               Horarios
             </h3>
 
@@ -54,7 +54,7 @@ export default function Policies() {
               <CreditCard size={32} />
             </div>
 
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">
               Pagos
             </h3>
 
@@ -71,7 +71,7 @@ export default function Policies() {
               <ShieldCheck size={32} />
             </div>
 
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">
               Cancelaciones
             </h3>
 
@@ -86,13 +86,12 @@ export default function Policies() {
 
         {/* Bloque confianza extra */}
         <div className="mt-20 text-center bg-green-50 p-10 rounded-3xl border border-green-100">
-        <p className="text-lg font-semibold text-green-800 flex justify-center items-center gap-6 flex-wrap">
-        <span>✔ Confirmación directa por WhatsApp</span>
-        <span>✔ Sin comisiones externas</span>
-        <span>✔ Atención personalizada</span>
-        </p>
+          <p className="text-lg font-semibold text-green-800 flex justify-center items-center gap-6 flex-wrap">
+            <span>✔ Confirmación directa por WhatsApp</span>
+            <span>✔ Sin comisiones externas</span>
+            <span>✔ Atención personalizada</span>
+          </p>
         </div>
-
 
       </div>
     </section>

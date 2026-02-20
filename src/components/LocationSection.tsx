@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 /*
 ================================================
@@ -26,7 +26,7 @@ export default function LocationSection() {
         <div>
 
           {/* Título */}
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6 text-black">
             Ubicación privilegiada
           </h2>
 
@@ -84,4 +84,8 @@ export default function LocationSection() {
     </section>
   );
 }
+
+
+
+
 

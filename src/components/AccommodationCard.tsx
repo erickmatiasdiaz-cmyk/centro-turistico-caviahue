@@ -2,14 +2,15 @@
 
 /*
 ================================================
-COMPONENTE ALOJAMIENTO PROFESIONAL
+COMPONENTE ALOJAMIENTO PROFESIONAL - CORREGIDO
 ================================================
 
-Incluye:
-- Validación obligatoria de fechas
-- Validación de personas
-- Cálculo automático de noches
-- Mensaje WhatsApp dinámico real
+✔ Inputs compatibles con Safari
+✔ color-scheme forzado
+✔ Fecha mínima hoy
+✔ Fecha salida ≥ entrada
+✔ Validaciones completas
+✔ WhatsApp dinámico
 */
 
 import { useState } from "react";
@@ -32,18 +33,19 @@ export default function AccommodationCard({
 }: {
   accommodation: Accommodation;
 }) {
-
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState("");
   const [error, setError] = useState("");
+
+  // Fecha mínima = hoy
+  const today = new Date().toISOString().split("T")[0];
 
   /*
   ===============================================
   CÁLCULO AUTOMÁTICO DE NOCHES
   ===============================================
   */
-
   const calculateNights = () => {
     if (!checkIn || !checkOut) return 0;
 
@@ -60,12 +62,10 @@ export default function AccommodationCard({
 
   /*
   ===============================================
-  VALIDACIÓN ANTES DE ENVIAR
+  VALIDACIÓN Y ENVÍO
   ===============================================
   */
-
   const handleReserve = () => {
-
     if (!checkIn || !checkOut) {
       setError("Debes seleccionar fecha de entrada y salida.");
       return;
@@ -98,9 +98,10 @@ Personas: ${guests}
 ¿Está disponible?
     `;
 
-    const whatsappLink = `https://wa.me/${siteData.whatsappNumber}?text=${encodeURIComponent(
-      message
-    )}`;
+    const whatsappLink = `https://wa.me/${siteData.whatsappNumber.replace(
+      "+",
+      ""
+    )}?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappLink, "_blank");
   };
@@ -123,7 +124,7 @@ Personas: ${guests}
       {/* Contenido */}
       <div className="p-6">
 
-        <h3 className="text-2xl font-semibold mb-2">
+        <h3 className="text-2xl font-semibold mb-2 text-gray-900">
           {accommodation.name}
         </h3>
 
@@ -137,34 +138,51 @@ Personas: ${guests}
           ))}
         </ul>
 
-        {/* Formulario */}
+        {/* FORMULARIO */}
         <div className="space-y-3 mb-3">
 
+          {/* Check-in */}
           <input
             type="date"
+            min={today}
             value={checkIn}
-            onChange={(e) => setCheckIn(e.target.value)}
-            className="w-full border rounded-lg px-3 py-2 text-sm"
+            onChange={(e) => {
+              setCheckIn(e.target.value);
+              if (checkOut && e.target.value > checkOut) {
+                setCheckOut("");
+              }
+            }}
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm
+                       bg-white text-gray-900
+                       focus:outline-none focus:ring-2 focus:ring-green-500"
           />
 
+          {/* Check-out */}
           <input
             type="date"
+            min={checkIn || today}
             value={checkOut}
             onChange={(e) => setCheckOut(e.target.value)}
-            className="w-full border rounded-lg px-3 py-2 text-sm"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm
+                       bg-white text-gray-900
+                       focus:outline-none focus:ring-2 focus:ring-green-500"
           />
 
+          {/* Personas */}
           <input
             type="number"
+            min="1"
             placeholder="Cantidad de personas"
             value={guests}
             onChange={(e) => setGuests(e.target.value)}
-            className="w-full border rounded-lg px-3 py-2 text-sm"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm
+                       bg-white text-gray-900 placeholder-gray-400
+                       focus:outline-none focus:ring-2 focus:ring-green-500"
           />
 
         </div>
 
-        {/* Mostrar noches automáticamente */}
+        {/* Noches automáticas */}
         {nights > 0 && (
           <p className="text-sm text-gray-600 mb-2">
             Estadía: <strong>{nights} noche(s)</strong>
@@ -181,7 +199,10 @@ Personas: ${guests}
         {/* Botón */}
         <button
           onClick={handleReserve}
-          className="w-full flex justify-center items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-xl transition"
+          className="w-full flex justify-center items-center gap-2
+                     bg-green-600 hover:bg-green-700
+                     text-white px-5 py-3 rounded-xl
+                     transition font-medium"
         >
           <Phone size={16} />
           Consultar disponibilidad

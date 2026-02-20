@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 /*
 ================================================
@@ -14,7 +14,7 @@ Incluye:
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Coffee, Phone } from "lucide-react";
+import { Clock3, Coffee, Croissant, Phone, UtensilsCrossed, Wifi } from "lucide-react";
 import { siteData } from "@/lib/siteData";
 
 export default function CafeteriaSection() {
@@ -116,11 +116,26 @@ export default function CafeteriaSection() {
           </p>
 
           <ul className="space-y-3 text-gray-700 mb-8">
-            <li>✔ Abierto todos los días de 09:00 a 20:00 hrs</li>
-            <li>✔ Café de especialidad</li>
-            <li>✔ Desayunos y brunch</li>
-            <li>✔ Opciones dulces y saladas</li>
-            <li>✔ Espacio ideal para relajarse o trabajar</li>
+            <li className="flex items-center gap-3">
+              <Clock3 size={18} className="text-green-600 shrink-0" />
+              <span>Abierto todos los días de 09:00 a 20:00 hrs</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Coffee size={18} className="text-green-600 shrink-0" />
+              <span>Café de especialidad</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Croissant size={18} className="text-green-600 shrink-0" />
+              <span>Desayunos y brunch</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <UtensilsCrossed size={18} className="text-green-600 shrink-0" />
+              <span>Opciones dulces y saladas</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Wifi size={18} className="text-green-600 shrink-0" />
+              <span>Espacio ideal para relajarse o trabajar</span>
+            </li>
           </ul>
 
           {/* BOTÓN WHATSAPP */}

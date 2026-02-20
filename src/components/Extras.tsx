@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 /*
 ================================================
@@ -23,7 +23,7 @@ export default function Extras() {
 
         {/* Título */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 text-black">
             Servicios y Experiencias
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
@@ -101,3 +101,5 @@ Precio: ${extra.price}
     </section>
   );
 }
+
+

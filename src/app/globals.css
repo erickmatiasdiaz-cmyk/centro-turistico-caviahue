@@ -40,3 +40,8 @@ Compensa header fijo
 section {
   scroll-margin-top: 100px;
 }
+input,
+select,
+textarea {
+  color-scheme: light;
+}
