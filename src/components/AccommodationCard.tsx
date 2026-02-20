@@ -1,16 +1,16 @@
-"use client";
+﻿"use client";
 
 /*
 ================================================
 COMPONENTE ALOJAMIENTO PROFESIONAL - CORREGIDO
 ================================================
 
-✔ Inputs compatibles con Safari
-✔ color-scheme forzado
-✔ Fecha mínima hoy
-✔ Fecha salida ≥ entrada
-✔ Validaciones completas
-✔ WhatsApp dinámico
+âœ” Inputs compatibles con Safari
+âœ” color-scheme forzado
+âœ” Fecha mÃ­nima hoy
+âœ” Fecha salida â‰¥ entrada
+âœ” Validaciones completas
+âœ” WhatsApp dinÃ¡mico
 */
 
 import { useState } from "react";
@@ -38,12 +38,12 @@ export default function AccommodationCard({
   const [guests, setGuests] = useState("");
   const [error, setError] = useState("");
 
-  // Fecha mínima = hoy
+  // Fecha mÃ­nima = hoy
   const today = new Date().toISOString().split("T")[0];
 
   /*
   ===============================================
-  CÁLCULO AUTOMÁTICO DE NOCHES
+  CÃLCULO AUTOMÃTICO DE NOCHES
   ===============================================
   */
   const calculateNights = () => {
@@ -62,7 +62,7 @@ export default function AccommodationCard({
 
   /*
   ===============================================
-  VALIDACIÓN Y ENVÍO
+  VALIDACIÃ“N Y ENVÃO
   ===============================================
   */
   const handleReserve = () => {
@@ -86,14 +86,14 @@ export default function AccommodationCard({
     const message = `
 Hola, quiero reservar:
 
-Alojamiento: ${accommodation.name}
-Capacidad: ${accommodation.capacity}
-Precio base: ${accommodation.price}
+🏡 Alojamiento: ${accommodation.name}
+👥 Capacidad: ${accommodation.capacity}
+💵 Precio base: ${accommodation.price}
 
-Fecha entrada: ${checkIn}
-Fecha salida: ${checkOut}
-Noches: ${nights}
-Personas: ${guests}
+📅 Fecha entrada: ${checkIn}
+📆 Fecha salida: ${checkOut}
+🌙 Noches: ${nights}
+🙋 Personas: ${guests}
 
 ¿Está disponible?
     `;
@@ -134,7 +134,7 @@ Personas: ${guests}
 
         <ul className="text-sm space-y-1 mb-4 text-gray-600">
           {accommodation.features.map((feature, i) => (
-            <li key={i}>• {feature}</li>
+            <li key={i}>â€¢ {feature}</li>
           ))}
         </ul>
 
@@ -182,10 +182,10 @@ Personas: ${guests}
 
         </div>
 
-        {/* Noches automáticas */}
+        {/* Noches automÃ¡ticas */}
         {nights > 0 && (
           <p className="text-sm text-gray-600 mb-2">
-            Estadía: <strong>{nights} noche(s)</strong>
+            EstadÃ­a: <strong>{nights} noche(s)</strong>
           </p>
         )}
 
@@ -196,7 +196,7 @@ Personas: ${guests}
           </p>
         )}
 
-        {/* Botón */}
+        {/* BotÃ³n */}
         <button
           onClick={handleReserve}
           className="w-full flex justify-center items-center gap-2
