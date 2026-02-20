@@ -5,12 +5,12 @@
 COMPONENTE ALOJAMIENTO PROFESIONAL - CORREGIDO
 ================================================
 
-âœ” Inputs compatibles con Safari
-âœ” color-scheme forzado
-âœ” Fecha mÃ­nima hoy
-âœ” Fecha salida â‰¥ entrada
-âœ” Validaciones completas
-âœ” WhatsApp dinÃ¡mico
+✔ Inputs compatibles con Safari
+✔ color-scheme forzado
+✔ Fecha mínima hoy
+✔ Fecha salida >= entrada
+✔ Validaciones completas
+✔ WhatsApp dinámico
 */
 
 import { useState } from "react";
@@ -38,12 +38,12 @@ export default function AccommodationCard({
   const [guests, setGuests] = useState("");
   const [error, setError] = useState("");
 
-  // Fecha mÃ­nima = hoy
+  // Fecha mínima = hoy
   const today = new Date().toISOString().split("T")[0];
 
   /*
   ===============================================
-  CÃLCULO AUTOMÃTICO DE NOCHES
+  CÁLCULO AUTOMÁTICO DE NOCHES
   ===============================================
   */
   const calculateNights = () => {
@@ -62,7 +62,7 @@ export default function AccommodationCard({
 
   /*
   ===============================================
-  VALIDACIÃ“N Y ENVÃO
+  VALIDACIÓN Y ENVÍO
   ===============================================
   */
   const handleReserve = () => {
@@ -108,7 +108,6 @@ Hola, quiero reservar:
 
   return (
     <div className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
-
       {/* Imagen */}
       <div className="relative h-72">
         <Image
@@ -123,24 +122,20 @@ Hola, quiero reservar:
 
       {/* Contenido */}
       <div className="p-6">
-
         <h3 className="text-2xl font-semibold mb-2 text-gray-900">
           {accommodation.name}
         </h3>
 
-        <p className="text-green-600 font-bold mb-4">
-          {accommodation.price}
-        </p>
+        <p className="text-green-600 font-bold mb-4">{accommodation.price}</p>
 
         <ul className="text-sm space-y-1 mb-4 text-gray-600">
           {accommodation.features.map((feature, i) => (
-            <li key={i}>â€¢ {feature}</li>
+            <li key={i}>• {feature}</li>
           ))}
         </ul>
 
         {/* FORMULARIO */}
         <div className="space-y-3 mb-3">
-
           {/* Check-in */}
           <input
             type="date"
@@ -179,24 +174,19 @@ Hola, quiero reservar:
                        bg-white text-gray-900 placeholder-gray-400
                        focus:outline-none focus:ring-2 focus:ring-green-500"
           />
-
         </div>
 
-        {/* Noches automÃ¡ticas */}
+        {/* Noches automáticas */}
         {nights > 0 && (
           <p className="text-sm text-gray-600 mb-2">
-            EstadÃ­a: <strong>{nights} noche(s)</strong>
+            Estadía: <strong>{nights} noche(s)</strong>
           </p>
         )}
 
         {/* Error */}
-        {error && (
-          <p className="text-sm text-red-600 mb-3">
-            {error}
-          </p>
-        )}
+        {error && <p className="text-sm text-red-600 mb-3">{error}</p>}
 
-        {/* BotÃ³n */}
+        {/* Botón */}
         <button
           onClick={handleReserve}
           className="w-full flex justify-center items-center gap-2
@@ -207,7 +197,6 @@ Hola, quiero reservar:
           <Phone size={16} />
           Consultar disponibilidad
         </button>
-
       </div>
     </div>
   );
