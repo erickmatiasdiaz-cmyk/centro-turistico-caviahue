@@ -89,7 +89,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <a href="#inicio" className="flex items-center gap-3">
             <Image
               src="/logo.JPG"
               alt={siteData.name}
@@ -99,7 +99,7 @@ export default function Header() {
             <span className="text-white font-semibold hidden sm:block">
               {siteData.name}
             </span>
-          </div>
+          </a>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8 text-white">

@@ -34,7 +34,7 @@ export default function Hero() {
   }, [images.length]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section id="inicio" className="relative h-screen w-full overflow-hidden">
 
       {/* Slider imágenes */}
       {images.map((img, index) => (
