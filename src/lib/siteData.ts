@@ -1,4 +1,4 @@
-/*
+﻿/*
   ======================================
   CONFIGURACIÓN GLOBAL DEL SITIO
   ======================================
@@ -274,8 +274,10 @@ export const siteData = {
     description:
       "Disfruta de una experiencia única en contacto con la naturaleza.",
     social: {
-      instagram: "https://instagram.com/",
+      instagram: "https://www.instagram.com/caviahue.turismo/",
       facebook: "https://facebook.com/",
     },
   },
 };
+
+

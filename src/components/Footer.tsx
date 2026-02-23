@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Phone, MapPin, Instagram, Facebook } from "lucide-react";
 import { siteData } from "@/lib/siteData";
@@ -62,14 +62,19 @@ export default function Footer() {
 
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/caviahue.turismo/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram Caviahue Turismo"
                 className="p-3 bg-white/5 hover:bg-white/10 rounded-xl transition"
               >
                 <Instagram size={18} />
               </a>
 
               <a
-                href="#"
+                href={siteData.footer.social.facebook}
+                target="_blank"
+                rel="noreferrer"
                 className="p-3 bg-white/5 hover:bg-white/10 rounded-xl transition"
               >
                 <Facebook size={18} />
@@ -92,3 +97,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+
