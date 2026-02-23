@@ -12,7 +12,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Phone, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { siteData } from "@/lib/siteData";
 
 export default function Header() {
@@ -20,8 +20,6 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
-
-  const whatsappLink = `https://wa.me/${siteData.whatsappNumber}`;
 
   const navLinks = [
     { label: "Alojamientos", href: "alojamientos" },
@@ -118,18 +116,6 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* WhatsApp Button */}
-          <div className="hidden lg:block">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              className="bg-green-600 hover:bg-green-700 px-5 py-2 rounded-xl flex items-center gap-2 transition text-white"
-            >
-              <Phone size={16} />
-              {siteData.phoneDisplay}
-            </a>
-          </div>
-
           {/* Mobile Button */}
           <button
             className="lg:hidden text-white"
@@ -156,15 +142,6 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-
-            <a
-              href={whatsappLink}
-              target="_blank"
-              className="bg-green-600 px-6 py-3 rounded-xl flex items-center gap-2 justify-center"
-            >
-              <Phone size={16} />
-              WhatsApp
-            </a>
           </div>
         )}
       </header>
